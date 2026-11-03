@@ -1,38 +1,65 @@
 # MHC Screening Model
 
-Early depression screening for university students. The project uses the Zenodo university-student dataset (PHQ-9, GAD-7, ISI and PSS-14 questionnaires, 19,251 students) to predict moderate or worse depression (PHQ-9 total of 10 or more) from a short questionnaire that does not include PHQ-9 questions 3 to 9. Logistic regression, decision tree, random forest and XGBoost models are compared against the PHQ-2 rule, the simple two-question screening baseline.
+ICS 3202 semester project (Group 5): the machine learning engine for a mobile app that screens university students for depression.
+
+The project uses the Zenodo university-student dataset (PHQ-9, GAD-7, ISI and PSS-14 questionnaires). A short questionnaire of 21 questions is used to predict one of three levels, which are worked out from the full PHQ-9 total:
+
+| Level | Meaning | PHQ-9 total |
+|---|---|---|
+| 0 | okay | 0 to 4 |
+| 1 | mild | 5 to 9 |
+| 2 | moderate or worse | 10 to 27 |
+
+The features are PHQ-9 questions 1 and 2 (the PHQ-2) plus selected GAD-7, ISI and PSS questions. PHQ-9 questions 3 to 9 and the PHQ-9 total are never used as features, because they make up the label. The base model is logistic regression. It is compared with the PHQ-2 rule, the simple two-question screening baseline. Random Forest and XGBoost will be added later as comparison models, on the same data and with the same metrics.
 
 ## Folder structure
 
 ```
 ML Engine/
 |-- data/
-|   |-- zenodo_clean.csv      cleaned dataset (input to notebooks 01 and 02)
-|   |-- train.csv             created by notebook 02
-|   `-- test.csv              created by notebook 02
+|   |-- zenodo.csv            raw merged dataset (24,292 students, never modified)
+|   |-- zenodo_clean.csv      created by notebook 01 (19,251 students)
+|   |-- train.csv             created by notebook 03
+|   `-- test.csv              created by notebook 03
 |-- notebooks/
-|   |-- 01_data_understanding_and_eda.ipynb
-|   |-- 02_preprocessing.ipynb
-|   `-- 03_logistic_regression.ipynb
+|   |-- 01_data_understanding_and_cleaning.ipynb
+|   |-- 02_eda.ipynb
+|   |-- 03_preprocessing.ipynb
+|   `-- LogisticRegression_Base.ipynb
 `-- README.md
 ```
 
-The notebooks for the decision tree, random forest, XGBoost and the final model comparison will be added later.
+## Notebook order (CRISP-DM)
 
-## Running order
+Run the notebooks from top to bottom, in this order. Each notebook needs the files created by the one before it.
 
-Run the notebooks from top to bottom, in this order. Each one runs on its own, but notebook 03 needs the files that notebook 02 creates.
-
-1. `01_data_understanding_and_eda.ipynb`: data quality checks, target definition and exploratory analysis. Reads `data/zenodo_clean.csv`.
-2. `02_preprocessing.ipynb`: feature selection (21 questions) and the stratified 80/20 train/test split. Writes `data/train.csv` and `data/test.csv`.
-3. `03_logistic_regression.ipynb`: PHQ-2 baseline, logistic regression, class weighting, threshold tuning and coefficients. Reads `data/train.csv` and `data/test.csv`.
+1. `01_data_understanding_and_cleaning.ipynb` (Data understanding + Data preparation): data quality checks and step-by-step cleaning of the raw data. Reads `data/zenodo.csv` and writes `data/zenodo_clean.csv`.
+2. `02_eda.ipynb` (Data understanding): the 3-level target, exploratory analysis with written observations, and the PHQ-2 baseline. Reads `data/zenodo_clean.csv`.
+3. `03_preprocessing.ipynb` (Data preparation): feature selection (21 questions) and the stratified 80/20 train/test split. Writes `data/train.csv` and `data/test.csv`.
+4. `LogisticRegression_Base.ipynb` (Modelling + Evaluation): the base model, stratified 5-fold cross-validation, test-set evaluation (per-class recall, macro F1, confusion matrix), comparison with the PHQ-2 rule, and the plan for further validation. Reads `data/train.csv` and `data/test.csv`.
 
 Paths inside the notebooks are relative to the `notebooks/` folder (for example `../data/train.csv`), so open the notebooks from that folder.
+
+## How to run
+
+1. Install the requirements below.
+2. Open Jupyter from the `notebooks/` folder and choose any Python kernel that has the packages installed.
+3. Run `01`, `02`, `03` and then `LogisticRegression_Base` with "Run All". The files in `data/` are recreated by notebooks 01 and 03.
+
+To run everything from the command line, from the `notebooks/` folder:
+
+```
+jupyter nbconvert --to notebook --execute --inplace 01_data_understanding_and_cleaning.ipynb
+jupyter nbconvert --to notebook --execute --inplace 02_eda.ipynb
+jupyter nbconvert --to notebook --execute --inplace 03_preprocessing.ipynb
+jupyter nbconvert --to notebook --execute --inplace LogisticRegression_Base.ipynb
+```
 
 ## Requirements
 
 - Python 3.11
 - pandas, numpy, matplotlib, seaborn, scikit-learn
 - jupyter (to run the notebooks)
+- xgboost (for the later comparison model)
 
-Install with `pip install pandas numpy matplotlib seaborn scikit-learn jupyter`. The notebooks were saved with a kernel called `MHC Screening`; if it is not available on your machine, choose any Python kernel that has the packages above.
+Install with `pip install pandas numpy matplotlib seaborn scikit-learn jupyter xgboost`.
