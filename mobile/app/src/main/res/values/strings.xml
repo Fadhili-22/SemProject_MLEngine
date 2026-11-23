@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MindCheck</string>
+
+    <!-- Toolbar titles for each screen (used in nav_graph.xml) -->
+    <string name="title_checkin">Check-in</string>
+    <string name="title_result">Your result</string>
+    <string name="title_help">Help and support</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">How are you really doing?</string>
+    <string name="welcome_body">MindCheck asks 21 short questions about your mood, worries, sleep and stress, then shows how you are doing and where to find support.</string>
+    <string name="welcome_point_time">⏱  21 questions, about 3 minutes</string>
+    <string name="welcome_point_private">🔒  Your answers are not saved or shared</string>
+    <string name="welcome_point_not_diagnosis">🩺  This is a screening, not a diagnosis</string>
+    <string name="start_screening">Start check-in</string>
+    <string name="help_and_support">Help and support</string>
+
+    <!-- Buttons -->
+    <string name="see_result">See my result</string>
+    <string name="start_again">Start again</string>
+
+    <!-- Temporary text until each screen is built -->
+    <string name="placeholder_checkin">The questions will appear here (step 5).</string>
+    <string name="placeholder_result">Your result will appear here (step 7).</string>
+    <string name="placeholder_help">Support options will appear here (step 8).</string>
+</resources>

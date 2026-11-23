@@ -2,3 +2,27 @@
 __pycache__/
 *.pyc
 .vscode/
+
+# IDE settings
+.idea/
+*.iml
+.venv/
+venv/
+
+# Android / Gradle
+.gradle/
+build/
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kept on this PC only (not pushed)
+docs/mobile-dev-notes/*.pdf
+docs/ml-integration-guide.md
