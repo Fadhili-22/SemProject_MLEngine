@@ -17,8 +17,7 @@ The features are PHQ-9 questions 1 and 2 (the PHQ-2) plus selected GAD-7, ISI an
 ## Folder structure
 
 ```
-ML Engine/
-|-- CLAUDE.md                     detailed project and app-integration guide
+ML Engine/           
 |-- README.md
 |-- export/android/
 |   |-- LevelClassifier.kt        the chosen model as plain Kotlin (no library)
