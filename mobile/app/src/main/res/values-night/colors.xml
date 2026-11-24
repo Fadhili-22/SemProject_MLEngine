@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MindCheck colours for dark mode -->
+<resources>
+    <color name="purple_primary">#CDB8FF</color>
+    <color name="purple_on_primary">#2E0F6E</color>
+    <color name="purple_container">#3E1F83</color>
+    <color name="purple_on_container">#EADDFF</color>
+    <color name="purple_secondary">#CAC2DB</color>
+    <color name="purple_secondary_container">#47425A</color>
+    <color name="purple_on_secondary_container">#E8E2F2</color>
+
+    <color name="gradient_start">#3E1F83</color>
+    <color name="gradient_end">#22094F</color>
+
+    <color name="background">#141218</color>
+    <color name="surface">#141218</color>
+    <color name="on_surface">#E7E1EC</color>
+    <color name="on_surface_variant">#CAC4D6</color>
+    <color name="outline">#938EA0</color>
+    <color name="outline_variant">#48454F</color>
+    <color name="surface_container_lowest">#0F0D13</color>
+    <color name="surface_container_low">#1D1B22</color>
+    <color name="surface_container">#211F27</color>
+    <color name="surface_container_high">#2B2932</color>
+    <color name="surface_container_highest">#36343D</color>
+
+    <color name="level_low_container">#1C4A2E</color>
+    <color name="level_low_on_container">#C9F0D6</color>
+    <color name="level_moderate_container">#5A4200</color>
+    <color name="level_moderate_on_container">#FFE3AE</color>
+    <color name="level_high_container">#7A1F2E</color>
+    <color name="level_high_on_container">#FFD9DE</color>
+
+    <color name="crisis_container">#93000A</color>
+    <color name="crisis_on_container">#FFDAD6</color>
+    <color name="crisis_button">#FFB4AB</color>
+    <color name="crisis_on_button">#690005</color>
+</resources>

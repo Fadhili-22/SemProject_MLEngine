@@ -1,8 +1,42 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- MindCheck theme: Material 3 with our purple + white colours.
+         The colours come from values/colors.xml (light) and values-night/colors.xml (dark). -->
     <style name="Base.Theme.MindCheck" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorOnPrimary">@color/purple_on_primary</item>
+        <item name="colorPrimaryContainer">@color/purple_container</item>
+        <item name="colorOnPrimaryContainer">@color/purple_on_container</item>
+        <item name="colorSecondary">@color/purple_secondary</item>
+        <item name="colorSecondaryContainer">@color/purple_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/purple_on_secondary_container</item>
+
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outline_variant</item>
+        <item name="colorSurfaceContainerLowest">@color/surface_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/surface_container_low</item>
+        <item name="colorSurfaceContainer">@color/surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/surface_container_highest</item>
+
+        <!-- Font: Poppins everywhere (styles in values/type.xml, font files in res/font/) -->
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.MindCheck.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.MindCheck.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.MindCheck.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.MindCheck.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.MindCheck.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.MindCheck.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.MindCheck.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.MindCheck.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.MindCheck.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.MindCheck.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.MindCheck.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.MindCheck.LabelSmall</item>
     </style>
 
     <style name="Theme.MindCheck" parent="Base.Theme.MindCheck" />

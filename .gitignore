@@ -1,7 +1,6 @@
 .ipynb_checkpoints/
 __pycache__/
 *.pyc
-.vscode/
 
 # IDE settings
 .idea/
@@ -26,3 +25,5 @@ Thumbs.db
 # Kept on this PC only (not pushed)
 docs/mobile-dev-notes/*.pdf
 docs/ml-integration-guide.md
+config.bat
+node_modules

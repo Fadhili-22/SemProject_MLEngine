@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Step 3: the Welcome screen from step 2, moved out of activity_main.xml into its own Fragment layout.
-     ScrollView = lets the screen scroll on small phones or with big text.
-     A ScrollView can only have ONE child, so everything goes inside one LinearLayout. -->
+<!-- Welcome screen (Lecture 5 - Layouts).
+     A ScrollView can only have ONE child, so everything goes inside one vertical LinearLayout. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,83 +8,199 @@
     android:layout_height="match_parent"
     tools:context=".ui.WelcomeFragment">
 
-    <!-- vertical LinearLayout = children stacked top to bottom (Lecture 5) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:paddingHorizontal="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="24dp">
 
-        <!-- Title -->
+        <!-- Purple gradient banner (drawable/bg_hero_gradient.xml) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_hero_gradient"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_icon_circle_white"
+                android:gravity="center"
+                android:text="💜"
+                android:textSize="26sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:alpha="0.85"
+                android:text="@string/welcome_eyebrow"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/welcome_title"
+                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:alpha="0.9"
+                android:lineSpacingMultiplier="1.15"
+                android:text="@string/welcome_body"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/welcome_expect"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold" />
+
+        <!-- Three "what to expect" rows: icon circle + title + description -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/welcome_title"
-            android:textAppearance="?attr/textAppearanceHeadlineMedium" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <!-- Short description -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/welcome_body"
-            android:textAppearance="?attr/textAppearanceBodyLarge" />
-
-        <!-- Card with three key points (a LinearLayout nested inside a card) -->
-        <com.google.android.material.card.MaterialCardView
-            style="?attr/materialCardViewFilledStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="16dp">
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_icon_circle"
+                android:gravity="center"
+                android:text="⏱️"
+                android:textSize="20sp" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/welcome_point_time"
-                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    android:text="@string/welcome_point_time_title"
+                    android:textAppearance="?attr/textAppearanceTitleSmall" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/welcome_point_private"
-                    android:textAppearance="?attr/textAppearanceBodyLarge" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="@string/welcome_point_not_diagnosis"
-                    android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    android:text="@string/welcome_point_time_body"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
             </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
-        <!-- Main action. The id lets Kotlin find it with findViewById. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_icon_circle"
+                android:gravity="center"
+                android:text="🔒"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_point_private_title"
+                    android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_point_private_body"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_icon_circle"
+                android:gravity="center"
+                android:text="🩺"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_point_diagnosis_title"
+                    android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_point_diagnosis_body"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Main action -->
         <Button
             android:id="@+id/start_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:minHeight="56dp"
-            android:text="@string/start_screening" />
+            android:minHeight="60dp"
+            android:text="@string/start_screening"
+            android:textAppearance="?attr/textAppearanceTitleSmall" />
 
-        <!-- Secondary action: outlined style so it looks less important -->
+        <!-- Secondary action: outlined so it looks less important -->
         <Button
             android:id="@+id/help_button"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:minHeight="56dp"
-            android:text="@string/help_and_support" />
+            android:layout_marginTop="10dp"
+            android:minHeight="60dp"
+            android:text="@string/help_and_support"
+            android:textAppearance="?attr/textAppearanceTitleSmall" />
 
     </LinearLayout>
 </ScrollView>

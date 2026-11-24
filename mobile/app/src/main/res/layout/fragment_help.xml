@@ -1,19 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Step 3: placeholder Help screen. Step 8 replaces this with the support list (SlidingPaneLayout). -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Step 8 (Lecture 7 - Adaptive layouts): SlidingPaneLayout.
+     If both panes fit side by side (280dp + 300dp, e.g. a tablet or landscape), they show together.
+     On a phone, the detail pane slides over the list when an item is tapped. -->
+<androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sliding_pane"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp"
     tools:context=".ui.HelpFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/placeholder_help"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+    <!-- List pane -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="280dp"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <LinearLayout
+            android:id="@+id/resource_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/help_intro"
+                android:textAppearance="?attr/textAppearanceBodyLarge"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+            <!-- One card per support option is added here in Kotlin -->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Detail pane -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?android:attr/colorBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/detail_emoji"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/bg_icon_circle"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_chip"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimaryContainer" />
+
+            <TextView
+                android:id="@+id/detail_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:lineSpacingMultiplier="1.25"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <Button
+                android:id="@+id/call_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:minHeight="60dp"
+                android:textAppearance="?attr/textAppearanceTitleSmall" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.slidingpanelayout.widget.SlidingPaneLayout>

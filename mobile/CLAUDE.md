@@ -24,12 +24,15 @@ It sits inside the group repo `SemProject_MLEngine`. The ML engine (owned by tea
 |---|---|---|---|
 | 1 | Fresh project, Hello World on the emulator | 4 | Done |
 | 2 | Welcome screen in `activity_main.xml` (LinearLayout in a ScrollView, strings in strings.xml, Start + Help buttons) | 5 | Done |
-| 3 | Navigation Component: move Welcome into `WelcomeFragment`; add Check-in, Result, Help fragments; `nav_graph.xml`; toolbar | 6 | Built (compiles); student to test on emulator. Check-in/Result/Help are placeholders |
-| 4 | `Question` / `AnswerOption` data classes + `QuestionBank` with the 21 model questions, plus the separate PHQ-9 question 9 safety question | 2-3 | |
-| 5 | Check-in screen: one question per page, RadioGroup built in code, Back/Next, progress bar, shared `ScreeningViewModel` | 5-6 | |
-| 6 | Add the ML model: copy `LevelClassifier.kt` and `LevelClassifierTest.kt` from `../ml-engine/export/android/`, change only the package line, run the unit test | - | |
-| 7 | Result screen: call `LevelClassifier.predictLevel(answers)`, a `RiskLevel` sealed class per level (polymorphism) for text and colour, score per area, safety pathway for question 9 | OOP | |
-| 8 | Help screen: list + detail with `SlidingPaneLayout`, Call button with an `ACTION_DIAL` Intent | 6-7 | |
+| 3 | Navigation Component: `WelcomeFragment`, `CheckInFragment`, `ResultFragment`, `HelpFragment`; `nav_graph.xml`; centred toolbar title | 6 | Built |
+| 4 | `Question` / `AnswerOption` data classes + `QuestionBank` (21 model questions + PHQ-9 Q9 safety question, 22 in total) | 2-3 | Built |
+| 5 | Check-in screen: one question per page, answer cards (`item_option.xml`, MaterialCardView + RadioButton) built in code, Back/Next, progress bar, shared `ScreeningViewModel` | 5-6 | Built |
+| 6 | ML model copied from `../ml-engine/export/android/` (only the package line changed); `LevelClassifierTest` passes, plus `QuestionBankTest` | - | Built, tests pass |
+| 7 | Result screen: `LevelClassifier.predictLevel`, `RiskLevel` sealed class (Low / Moderate / High), score per area, crisis card when Q9 > 0 | OOP | Built |
+| 8 | Help screen: list + detail with `SlidingPaneLayout`, Call button with an `ACTION_DIAL` Intent | 6-7 | Built |
+| 9 | Deep purple + white theme (`values/colors.xml`, `values-night/colors.xml`, `themes.xml`), Poppins font (`res/font/`, styles in `values/type.xml`), gradient Welcome banner, purple app icon background | - | Built |
+
+All steps compile and unit tests pass. Still to do: test every screen on the emulator (light and dark mode, rotation, tablet for the two-pane Help screen), and check the help phone numbers.
 
 Update the Status column as steps are finished.
 

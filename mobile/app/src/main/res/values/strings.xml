@@ -7,20 +7,48 @@
     <string name="title_help">Help and support</string>
 
     <!-- Welcome -->
+    <string name="welcome_eyebrow">Student wellbeing check-in</string>
     <string name="welcome_title">How are you really doing?</string>
-    <string name="welcome_body">MindCheck asks 21 short questions about your mood, worries, sleep and stress, then shows how you are doing and where to find support.</string>
-    <string name="welcome_point_time">⏱  21 questions, about 3 minutes</string>
-    <string name="welcome_point_private">🔒  Your answers are not saved or shared</string>
-    <string name="welcome_point_not_diagnosis">🩺  This is a screening, not a diagnosis</string>
+    <string name="welcome_body">A few minutes for you. Answer some short questions about your mood, worries, sleep and stress, and see where support can help.</string>
+    <string name="welcome_expect">What to expect</string>
+    <string name="welcome_point_time_title">About 3 minutes</string>
+    <string name="welcome_point_time_body">22 short questions, one at a time</string>
+    <string name="welcome_point_private_title">Private</string>
+    <string name="welcome_point_private_body">Your answers stay on this phone and are not saved</string>
+    <string name="welcome_point_diagnosis_title">A screening, not a diagnosis</string>
+    <string name="welcome_point_diagnosis_body">It points you to the right support, it does not label you</string>
     <string name="start_screening">Start check-in</string>
     <string name="help_and_support">Help and support</string>
 
-    <!-- Buttons -->
+    <!-- Check-in -->
+    <string name="question_counter">%1$d of %2$d</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
     <string name="see_result">See my result</string>
+    <string name="answer_all_questions">Please answer every question first</string>
+
+    <!-- Result -->
+    <string name="your_result">Thanks for checking in</string>
+    <string name="level_low_title">Low risk</string>
+    <string name="level_low_message">Your answers suggest you\'re doing okay right now. Keep up what helps you, like good sleep, time with friends and breaks from studying. If things ever change, we\'re here.</string>
+    <string name="level_moderate_title">Moderate risk</string>
+    <string name="level_moderate_message">It looks like you might be carrying a bit more than usual lately. That\'s really common at uni, and talking to someone can make a real difference. Student counselling is free and confidential.</string>
+    <string name="level_high_title">High risk</string>
+    <string name="level_high_message">It sounds like things have been heavy for you lately, and you deserve support. Please book a chat with student counselling soon. You don\'t have to wait until things get worse.</string>
+    <string name="scores_by_area">How you\'re doing in each area</string>
+    <string name="score_out_of">%1$d / %2$d</string>
+    <string name="result_note">This is a quick check-in, not a diagnosis, so it can\'t know everything about you. If something feels off, a counsellor is always happy to talk, whatever your result.</string>
+    <string name="talk_to_counsellor">Talk to a counsellor</string>
     <string name="start_again">Start again</string>
 
-    <!-- Temporary text until each screen is built -->
-    <string name="placeholder_checkin">The questions will appear here (step 5).</string>
-    <string name="placeholder_result">Your result will appear here (step 7).</string>
-    <string name="placeholder_help">Support options will appear here (step 8).</string>
+    <!-- Support card (safety question answered above "Not at all") -->
+    <string name="crisis_emoji">💜</string>
+    <string name="crisis_title">We\'re here for you</string>
+    <string name="crisis_body">One of your answers tells us you may be having thoughts of hurting yourself. You don\'t have to carry that alone. Someone is ready to listen right now, any time of day or night.</string>
+    <string name="crisis_call_red_cross">Talk to someone now: 1199 (free, 24/7)</string>
+    <string name="crisis_call_emergency">In an emergency: call 999</string>
+
+    <!-- Help -->
+    <string name="help_intro">You do not have to deal with things alone. Tap an option to see how to reach it.</string>
+    <string name="call_number">Call %1$s</string>
 </resources>

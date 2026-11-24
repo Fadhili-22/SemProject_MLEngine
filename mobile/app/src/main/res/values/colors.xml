@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- MindCheck colours: purple + white (light mode). Dark mode versions are in values-night/colors.xml -->
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Brand purple -->
+    <!-- Brand purple: a deep violet -->
+    <color name="purple_primary">#4A2491</color>
+    <color name="purple_on_primary">#FFFFFF</color>
+    <color name="purple_container">#EAE3F7</color>
+    <color name="purple_on_container">#1C0752</color>
+    <color name="purple_secondary">#625B71</color>
+    <color name="purple_secondary_container">#E8E2F2</color>
+    <color name="purple_on_secondary_container">#1D192B</color>
+
+    <!-- Gradient used on the Welcome banner -->
+    <color name="gradient_start">#5B33A8</color>
+    <color name="gradient_end">#2F1466</color>
+
+    <!-- White surfaces, with a soft lavender-grey for cards -->
+    <color name="background">#FFFFFF</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#1A1820</color>
+    <color name="on_surface_variant">#5C5868</color>
+    <color name="outline">#7A7586</color>
+    <color name="outline_variant">#E1DCE9</color>
+    <color name="surface_container_lowest">#FFFFFF</color>
+    <color name="surface_container_low">#F9F7FC</color>
+    <color name="surface_container">#F4F1F9</color>
+    <color name="surface_container_high">#EFEBF6</color>
+    <color name="surface_container_highest">#E9E4F2</color>
+
+    <!-- Result levels -->
+    <color name="level_low_container">#E1F6E8</color>
+    <color name="level_low_on_container">#124A2A</color>
+    <color name="level_moderate_container">#FFF1D6</color>
+    <color name="level_moderate_on_container">#5C3D00</color>
+    <color name="level_high_container">#FDE3E6</color>
+    <color name="level_high_on_container">#7A1426</color>
+
+    <!-- Crisis support card -->
+    <color name="crisis_container">#FFDAD6</color>
+    <color name="crisis_on_container">#690005</color>
+    <color name="crisis_button">#BA1A1A</color>
+    <color name="crisis_on_button">#FFFFFF</color>
 </resources>
